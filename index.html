@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8 Years, One Journey - A Letter to My Team</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
+          rel="stylesheet">
+    <style>
+        :root {
+          --green: #2D6A2D;
+          --green-light: #4A8C3F;
+          --green-muted: #e8f3e8;
+          --gold: #C8A84B;
+          --gold-light: #f5e9c4;
+          --ink: #1a1a1a;
+          --ink-soft: #3d3d3d;
+          --ink-muted: #7a7a7a;
+          --cream: #FAF7F2;
+          --white: #ffffff;
+          --border: #e0d8cc;
+          --royal: #1a3a8a;
+          --royal-light: #2b5cd9;
+          --royal-muted: #e4eaf8;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+          font-family: 'DM Sans', sans-serif;
+          background: var(--cream);
+          color: var(--ink);
+          line-height: 1.8;
+        }
+
+        /* ── HERO ── */
+        .hero {
+          background: var(--green);
+          color: var(--white);
+          padding: 90px 40px 80px;
+          text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+        .hero::before {
+          content: '';
+          position: absolute;
+          inset: 0;
+          background: repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 60px,
+            rgba(255,255,255,0.03) 60px,
+            rgba(255,255,255,0.03) 61px
+          );
+        }
+        .hero-eyebrow {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.78rem;
+          letter-spacing: 0.2em;
+          text-transform: uppercase;
+          color: var(--gold);
+          margin-bottom: 20px;
+        }
+        .hero h1 {
+          font-family: 'Playfair Display', serif;
+          font-size: clamp(2.4rem, 6vw, 4.2rem);
+          font-weight: 900;
+          line-height: 1.15;
+          margin-bottom: 24px;
+          position: relative;
+        }
+        .hero h1 em {
+          font-style: italic;
+          color: var(--gold);
+        }
+        .hero-sub {
+          font-size: 1.05rem;
+          font-weight: 300;
+          color: rgba(255,255,255,0.75);
+          max-width: 560px;
+          margin: 0 auto 36px;
+        }
+        .hero-meta {
+          display: flex;
+          justify-content: center;
+          gap: 32px;
+          flex-wrap: wrap;
+        }
+        .hero-meta span {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.75rem;
+          letter-spacing: 0.1em;
+          color: rgba(255,255,255,0.5);
+        }
+        .hero-meta strong {
+          color: var(--gold);
+          font-weight: 500;
+        }
+
+        /* ── LAYOUT ── */
+        .container {
+          max-width: 780px;
+          margin: 0 auto;
+          padding: 0 28px;
+        }
+
+        /* ── OPENER ── */
+        .opener {
+          padding: 72px 0 0;
+        }
+        .opener p {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.3rem;
+          font-weight: 400;
+          line-height: 1.7;
+          color: var(--ink-soft);
+        }
+        .opener p strong {
+          color: var(--green);
+          font-weight: 700;
+        }
+
+        /* ── DIVIDER ── */
+        .divider {
+          display: flex;
+          align-items: center;
+          gap: 16px;
+          margin: 56px 0;
+        }
+        .divider::before, .divider::after {
+          content: '';
+          flex: 1;
+          height: 1px;
+          background: var(--border);
+        }
+        .divider-icon {
+          width: 8px;
+          height: 8px;
+          background: var(--gold);
+          transform: rotate(45deg);
+          flex-shrink: 0;
+        }
+
+        /* ── CHAPTER / ROLE CARD ── */
+        .chapter {
+          margin-bottom: 64px;
+        }
+        .chapter-header {
+          display: flex;
+          align-items: flex-start;
+          gap: 24px;
+          margin-bottom: 24px;
+        }
+        .chapter-number {
+          font-family: 'Playfair Display', serif;
+          font-size: 3rem;
+          font-weight: 900;
+          color: var(--green-muted);
+          line-height: 1;
+          flex-shrink: 0;
+          user-select: none;
+        }
+        .chapter-title-block {}
+        .chapter-label {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.7rem;
+          letter-spacing: 0.18em;
+          text-transform: uppercase;
+          color: var(--ink-muted);
+          margin-bottom: 4px;
+        }
+        .chapter-title {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.65rem;
+          font-weight: 700;
+          color: var(--green);
+          line-height: 1.2;
+        }
+
+        .chapter-body p {
+          font-size: 1rem;
+          color: var(--ink-soft);
+          margin-bottom: 18px;
+        }
+
+        /* ── TECH STACK PILL ROW ── */
+        .tech-stack {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 8px;
+          margin-top: 20px;
+          padding-top: 20px;
+          border-top: 1px dashed var(--border);
+        }
+        .tech-stack-label {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.68rem;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+          color: var(--ink-muted);
+          width: 100%;
+          margin-bottom: 4px;
+        }
+        .pill {
+          font-family: 'DM Mono', monospace;
+          font-size: 0.72rem;
+          padding: 4px 12px;
+          border-radius: 100px;
+          background: var(--green-muted);
+          color: var(--green);
+          border: 1px solid rgba(45,106,45,0.2);
+          font-weight: 500;
+        }
+
+        /* ── PULL QUOTE ── */
+        .pull-quote {
+          border-left: 3px solid var(--gold);
+          padding: 16px 24px;
+          background: var(--gold-light);
+          border-radius: 0 8px 8px 0;
+          margin: 32px 0;
+        }
+        .pull-quote p {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.1rem;
+          font-style: italic;
+          color: var(--ink-soft);
+          line-height: 1.6;
+        }
+        .pull-quote cite {
+          display: block;
+          font-family: 'DM Sans', sans-serif;
+          font-size: 0.8rem;
+          font-style: normal;
+          color: var(--ink-muted);
+          margin-top: 8px;
+        }
+
+        /* ── CALLOUT BOX ── */
+        .callout {
+          background: var(--green);
+          color: var(--white);
+          border-radius: 12px;
+          padding: 32px 36px;
+          margin: 40px 0;
+        }
+        .callout p {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.15rem;
+          /* font-style: italic; */
+          line-height: 1.7;
+          color: var(--gold-light);
+        }
+        .callout cite {
+          display: block;
+          font-family: 'DM Mono', monospace;
+          font-size: 0.72rem;
+          letter-spacing: 0.1em;
+          color: var(--gold);
+          margin-top: 12px;
+        }
+
+        /* ── HIGHLIGHT TAG ── */
+        .tag {
+          display: inline-block;
+          background: var(--green-muted);
+          color: var(--green);
+          font-family: 'DM Mono', monospace;
+          font-size: 0.72rem;
+          letter-spacing: 0.08em;
+          padding: 3px 10px;
+          border-radius: 4px;
+          font-weight: 500;
+        }
+
+        /* ── CLOSING LETTER ── */
+        .closing {
+          background: var(--white);
+          border: 1px solid var(--border);
+          border-radius: 16px;
+          padding: 52px 48px;
+          margin: 56px 0 80px;
+        }
+        .closing h2 {
+          font-family: 'Playfair Display', serif;
+          font-size: 1.9rem;
+          font-weight: 700;
+          color: var(--green);
+          margin-bottom: 24px;
+        }
+        .closing p {
+          font-size: 1rem;
+          color: var(--ink-soft);
+          margin-bottom: 18px;
+        }
+        .closing p strong {
+          color: var(--ink);
+        }
+        .sign-off {
+          margin-top: 36px;
+          padding-top: 24px;
+          border-top: 1px solid var(--border);
+          font-family: 'Playfair Display', serif;
+          font-size: 1rem;
+          font-style: italic;
+          color: var(--ink-muted);
+        }
+
+        /* ── FOOTER ── */
+        footer {
+          background: var(--ink);
+          color: rgba(255,255,255,0.4);
+          text-align: center;
+          padding: 28px;
+          font-family: 'DM Mono', monospace;
+          font-size: 0.72rem;
+          letter-spacing: 0.1em;
+        }
+        footer strong { color: var(--gold); }
+
+        /* ── CHAPTER 5 ROYAL BLUE OVERRIDE ── */
+        .chapter-blue .chapter-number { color: var(--royal-muted); }
+        .chapter-blue .chapter-title { color: var(--royal); }
+        .chapter-blue .pill {
+          background: var(--royal-muted);
+          color: var(--royal);
+          border-color: rgba(26,58,138,0.2);
+        }
+        .chapter-blue .pull-quote {
+          border-left-color: var(--royal-light);
+          background: var(--royal-muted);
+        }
+        .chapter-blue .callout {
+          background: var(--royal);
+        }
+        .chapter-blue .tag {
+          background: var(--royal-muted);
+          color: var(--royal);
+        }
+
+        @media (max-width: 520px) {
+          .hero { padding: 60px 24px 56px; }
+          .closing { padding: 36px 28px; }
+          .chapter-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+    <p class="hero-eyebrow">A farewell & a letter</p>
+    <h1>Eight Years,<br><em>One Remarkable</em> Journey</h1>
+    <p class="hero-sub">From Graduate Engineer Trainee to Lead Engineer II - a personal account of growth, grit, and
+        gratitude at John Deere.</p>
+    <div class="hero-meta">
+        <span>✦ <strong>8 Years</strong> at John Deere</span>
+        <span>✦ <strong>5 Roles</strong> Across the Ladder</span>
+        <span>✦ Written for <strong>My Team</strong></span>
+    </div>
+</header>
+
+<!-- OPENER -->
+<main>
+    <div class="container">
+        <section class="opener">
+            <p>
+                This is <strong>the most asked question of all time</strong> - at least for anyone who has spent a
+                significant stretch of their career here: <em>"How has it been? Is it worth it? What do you get out of
+                staying?"</em><br><br>
+                Let me answer that honestly. You are sitting inside one of the world's <strong>safest, most nurturing
+                professional environments</strong> - and that changes everything. This is my story of eight years inside
+                that environment. Pull up a chair.
+            </p>
+        </section>
+
+        <div class="divider">
+            <div class="divider-icon"></div>
+        </div>
+
+        <!-- CHAPTER 1 -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <div class="chapter-number">01</div>
+                <div class="chapter-title-block">
+                    <p class="chapter-label">Chapter One · Where it all began</p>
+                    <h2 class="chapter-title">Graduate Engineer Trainee</h2>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <p>
+                    Naive. Fresh. Eager. Completely unbothered by which technology I was being thrown into - just ready
+                    to jump into the deep end and figure it out on the way down. That was me on Day One. (And honestly?
+                    Still me. Just with better instincts now.)
+                </p>
+                <p>
+                    That first year as a Graduated Engineer Trainee was about absorbing everything - the culture, the
+                    codebase, the people, the rhythm of how things move inside a large organisation. It was overwhelming
+                    in the best possible way. I didn't overthink it. I just showed up, stayed curious, and let the work
+                    teach me.
+                </p>
+
+                <div class="pull-quote">
+                    <p>"The secret of getting ahead is getting started."</p>
+                    <cite>- Mark Twain</cite>
+                </div>
+
+                <p>
+                    After a year of building foundations, I transitioned into Software Engineer II - and the real game
+                    began.
+                </p>
+
+                <div class="tech-stack">
+                    <p class="tech-stack-label">Working Tech</p>
+                    <span class="pill">ROS</span>
+                    <span class="pill">Gazebo</span>
+                    <span class="pill">PyQT</span>
+                    <span class="pill">UI Development</span>
+                    <span class="pill">Computer Vision</span>
+                    <span class="pill">Embedded Systems</span>
+                    <span class="pill">Software Development</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 2 -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <div class="chapter-number">02</div>
+                <div class="chapter-title-block">
+                    <p class="chapter-label">Chapter Two · The turning point</p>
+                    <h2 class="chapter-title">Software Engineer II</h2>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <p>
+                    If the first chapter was about surviving, this one was about <strong>understanding yourself</strong>.
+                    Software Engineer II was technically an intermediate role before Senior Engineer - but it was
+                    anything but ordinary for me.
+                </p>
+                <p>
+                    This phase cracked me open in the best way. I started to recognise where I genuinely thrived, where
+                    I needed more work, and what kind of engineer - and person - I wanted to become. Challenging?
+                    Absolutely. Interesting? Without question.
+                </p>
+                <p>
+                    But perhaps the most underrated thing I did during this time was <strong>invest in people</strong>.
+                    Networking, building friendships, creating genuine connections - these weren't career tactics. They
+                    were life decisions. And they paid dividends I am still cashing today.
+                </p>
+
+                <div class="callout">
+                    <p>"Your network is your net worth - but only if you build it with sincerity, not strategy."</p>
+                    <cite>- A lesson learned the hard way</cite>
+                </div>
+
+                <div class="tech-stack">
+                    <p class="tech-stack-label">Working Tech</p>
+                    <span class="pill">Tango – JD Lawn Mower</span>
+                    <span class="pill">UWB</span>
+                    <span class="pill">GPS Communication</span>
+                    <span class="pill">XBees / Wireless Comm</span>
+                    <span class="pill">Logging Systems</span>
+                    <span class="pill">Android App Dev</span>
+                    <span class="pill">iOS App Dev</span>
+                    <span class="pill">Enterprise Mobility</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 3 -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <div class="chapter-number">03</div>
+                <div class="chapter-title-block">
+                    <p class="chapter-label">Chapter Three · The storm & the silver lining</p>
+                    <h2 class="chapter-title">Senior Software Engineer I</h2>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <p>
+                    By this point, I had worked with a wide plethora of people, technologies, and problem spaces. It was
+                    time to step up - and the world had other plans too. This was the era of COVID, and with it came the
+                    company's first major global workforce restructuring: the <span class="tag">SIRD - Smart Industrial Operating Model</span>.
+                </p>
+                <p>
+                    There was stress. There were worries. Projects got scrapped. Teams reshuffled. I was asked to move -
+                    again. Getting uprooted mid-project is taxing in ways that are hard to articulate unless you've
+                    lived it. But looking back, it was a <strong>Blessing in Disguise</strong>.
+                </p>
+                <p>
+                    Because it was during this turbulence that I first stepped fully onto the Cloud. Before that I'd
+                    been experimenting - machine learning scripts, model evaluation pipelines - but this was the moment
+                    everything clicked. The Cloud became my strongest foundation. My sharpest toolkit. My peak era of
+                    networking and expanding scope. If Software Engineer II was where I found myself, Senior Engineer I
+                    was where I <em>built</em> myself.
+                </p>
+
+                <div class="pull-quote">
+                    <p>"Sometimes the worst seasons of our career become the richest soil for growth. What feels like
+                        loss is often re-direction."</p>
+                    <cite>- Perspective earned through experience</cite>
+                </div>
+
+                <div class="tech-stack">
+                    <p class="tech-stack-label">Working Tech</p>
+                    <span class="pill">CVML Lifecycle</span>
+                    <span class="pill">Web Development</span>
+                    <span class="pill">Dash</span>
+                    <span class="pill">Bootstrap</span>
+                    <span class="pill">PVS</span>
+                    <span class="pill">ML Model Evaluation</span>
+                    <span class="pill">AWS – Cloud Computing</span>
+                    <span class="pill">Cloud Storage</span>
+                    <span class="pill">Enterprise Cloud Value Maximization</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 4 -->
+        <section class="chapter">
+            <div class="chapter-header">
+                <div class="chapter-number">04</div>
+                <div class="chapter-title-block">
+                    <p class="chapter-label">Chapter Four · The golden era</p>
+                    <h2 class="chapter-title">Lead Engineer I</h2>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <p>
+                    If I had to pick one word for this phase, it would be: <strong>golden.</strong>
+                </p>
+                <p>
+                    This time period shaped me in more ways than I can fully enumerate here. Opportunities came in waves
+                    - meeting influential people, forging meaningful corporate connections, leading cross-collaboration
+                    projects, travelling, stepping into new roles, carrying real ownership, and learning at a pace that
+                    felt almost unfair.
+                </p>
+                <p>
+                    The presentations. The 1-on-1 sessions. The hiring conversations. All of it added layers of
+                    capability I hadn't expected to develop so quickly. Lead Engineer I was when I stopped waiting to be
+                    handed things and started creating them.
+                </p>
+
+                <div class="callout">
+                    <p>"Leadership is not about being in charge. It is about taking care of those in your charge - and
+                        then making sure the work actually gets done."</p>
+                    <cite>- Simon Sinek (with a practical addendum)</cite>
+                </div>
+
+                <div class="tech-stack">
+                    <p class="tech-stack-label">Working Tech</p>
+                    <span class="pill">AWS</span>
+                    <span class="pill">Databricks</span>
+                    <span class="pill">Nebula 1.0</span>
+                    <span class="pill">Nebula 2.0</span>
+                    <span class="pill">PVS on Cloud</span>
+                    <span class="pill">GUI Development</span>
+                    <span class="pill">Web Development</span>
+                    <span class="pill">Data Science - Pre-Labelling Scripts, Performance Optimization</span>
+                    <span class="pill">Cost savings through efficient processes</span>
+                    <span class="pill">CSM / CSPO</span>
+                    <span class="pill">Employee of the Year</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- CHAPTER 5 -->
+        <section class="chapter chapter-blue">
+            <div class="chapter-header">
+                <div class="chapter-number">05</div>
+                <div class="chapter-title-block">
+                    <p class="chapter-label">Chapter Five · The full picture</p>
+                    <h2 class="chapter-title">Lead Engineer II → BRT</h2>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <p>
+                    From <strong style="color: var(--green);">Green &amp; Yellow</strong> to <strong style="color: var(--royal);">Blue &amp; White</strong> (pun intended), but as an org, this was the chapter that brought everything together.
+                </p>
+                <p>
+                    Lead Engineer II taught me something none of the previous roles could: that <strong>no individual is
+                    greater than the team</strong>. The enterprise doesn't move on one person's brilliance - it moves on
+                    collective trust, shared language, and teams that genuinely want each other to succeed.
+                </p>
+                <p>
+                    This phase was marked by deep stakeholder relationships, international travel, bonding with overseas
+                    and on-premise teams, and a level of cross-functional involvement that made every day feel
+                    consequential. Tech, non-tech, extracurricular - everything was firing at once, and it was
+                    exhilarating.
+                </p>
+                <p>
+                    I curated my project management skills. I deepened my enterprise visibility. I gave more, learned
+                    more, and connected more than in any previous chapter. It was so good, I genuinely didn't want it to
+                    end - and that feeling, that bittersweet "I wish this wasn't over," is itself the greatest
+                    endorsement I can give this organisation.
+                </p>
+                <p>
+                    And then came the transition to <strong style="color: var(--royal);">BRT - Blue River Technology</strong>. A move that felt like the natural next step: taking everything I'd built - the cloud expertise, the leadership instincts, the cross-functional muscle - and channelling it into a team pushing the edge of autonomous agriculture. Same Deere DNA, entirely new canvas. It was the perfect evolution.
+                </p>
+
+                <div class="pull-quote">
+                    <p>"Alone we can do so little; together we can do so much."</p>
+                    <cite>- Helen Keller</cite>
+                </div>
+
+                <div class="tech-stack">
+                    <p class="tech-stack-label">Working Tech</p>
+                    <span class="pill">AWS</span>
+                    <span class="pill">Databricks</span>
+                    <span class="pill">Cross-Org Collaboration</span>
+                    <span class="pill">Stakeholder Management</span>
+                    <span class="pill">Enterprise Visibility</span>
+                    <span class="pill">Project Ownership</span>
+                    <span class="pill">Project Management</span>
+                    <span class="pill">Stakeholder Management</span>
+                    <span class="pill">Cross-Collaboration Projects</span>
+                    <span class="pill">System Design and Architecture Planning</span>
+                    <span class="pill">Blue River Technology</span>
+                    <span class="pill">Autonomous Agriculture</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider">
+            <div class="divider-icon"></div>
+        </div>
+
+        <!-- CLOSING LETTER -->
+        <section class="closing">
+            <h2>A Letter to the Team I'm Leaving Behind</h2>
+
+            <p>
+                Eight years. Five roles. Countless late nights, project pivots, team lunches, offsite trips, late-night
+                Teams/Slack messages, and moments of genuine pride. This place grew me in ways I couldn't have scripted,
+                and I want you to know that <strong>this organisation absolutely serves its purpose</strong> - you just
+                have to stay active, stay curious, and stay present enough to receive it.
+            </p>
+
+            <p>
+                But here's the thing I most want to leave you with - and please, <em>please</em> take this seriously:
+            </p>
+
+            <div class="callout">
+                <p style="color: var(--gold-light); text-align: center;">"Work like a human being who loves their craft
+                    - not like a machine trying to prove something. Go out. Have fun. Laugh with your team. Log off
+                    sometimes. The best work you'll ever do comes from a person who is genuinely alive, not from someone
+                    who is burning themselves to the ground."</p>
+                <cite style="text-align: center; font-style: normal;">&nbsp;✦&nbsp This is the USP of this team. Protect
+                    it &nbsp;✦&nbsp</cite>
+            </div>
+
+            <p>
+                You are in a safe environment. That's rare. Use that safety to take creative risks, build real
+                relationships, explore unfamiliar technology, and grow at your own pace without shame. Don't waste that
+                privilege chasing urgency that doesn't exist.
+            </p>
+
+            <p>
+                The connections you make here - the friendships, the mentors, the quiet champions who advocate for you
+                in rooms you'll never be in - those will follow you everywhere. <strong>Invest in people as much as you
+                invest in code.</strong>
+            </p>
+
+            <p>
+                And when the hard phases come - the project cancellations, the org restructures, the moments where
+                everything feels uncertain - remember that those chapters often end up being the most formative ones of
+                all. Sit inside the discomfort. Let it teach you.
+            </p>
+
+            <p>
+                It has been an absolute privilege. I grew here. I laughed here. I struggled here. And I leave here
+                deeply grateful.
+            </p>
+
+            <div class="sign-off">
+                With every ounce of appreciation - thank you for eight extraordinary years. Now go do something
+                brilliant. 🌱<br><br>
+                <strong style="font-style:normal; font-family:'DM Sans', sans-serif; font-size:0.85rem; color:#3d3d3d;">-
+                    Your teammate, always <br>Shubham<br></strong>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    <p>8 Years · John Deere &nbsp;✦&nbsp; <strong>GET · E II · SrE I · LE I · LE II</strong> &nbsp;✦&nbsp; Written with
+        gratitude</p>
+    <p style="margin-top: 16px; font-size: 0.68rem;">
+        CONNECT ON
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style="display: inline; vertical-align: middle; margin: 0 4px;">
+            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+        </svg>
+        <a href="https://www.instagram.com/theshubhmgupta" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none;">@theshubhamgupta</a>
+        &nbsp;✦&nbsp;
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--cream)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" style="display: inline; vertical-align: middle; margin: 0 4px;">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+            <rect x="2" y="9" width="4" height="12"></rect>
+            <circle cx="4" cy="4" r="2"></circle>
+        </svg>
+        <a href="https://www.linkedin.com/in/shubhamsg" target="_blank" rel="noopener noreferrer" style="color: var(--gold); text-decoration: none;">@theshubhamgupta</a>
+    </p>
+</footer>
+
+</body>
+</html>
